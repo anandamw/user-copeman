@@ -1,0 +1,20 @@
+.btn-buy {
+background-color: #bc8157;
+margin-top: 20px;
+width: 100%;
+font-weight: 200 bold;
+border: none;
+color: white;
+}
+
+.btn-buy:hover {
+background-color: #d89e75;
+}
+
+.input-wrapper input,
+textarea {
+width: 100%;
+position: relative;
+padding: 5px;
+border: 1px solid rgb(216, 216, 216);
+}

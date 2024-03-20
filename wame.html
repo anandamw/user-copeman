@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kirim Pesan WhatsApp</title>
+</head>
+
+<body>
+    <h1>Form Pemesanan</h1>
+    <form id="pesanForm">
+        <label for="nama">Nama:</label><br />
+        <input type="text" id="nama" name="nama" /><br /><br />
+        <label for="nomer_telepon_pembeli">Nomor Telepon Pembeli:</label><br />
+        <input type="text" id="nomer_telepon_pembeli" name="nomer_telepon_pembeli" /><br /><br />
+        <label for="alamat">Alamat:</label><br />
+        <textarea id="alamat" name="alamat"></textarea><br /><br />
+        <label for="produk">Produk:</label><br />
+        <select id="produk" name="produk">
+            <option value="Produk1">Produk 1</option>
+            <option value="Produk2">Produk 2</option>
+            <option value="Produk3">Produk 3</option>
+        </select><br /><br />
+        <label for="pesan">Pesan:</label><br />
+        <textarea id="pesan" name="pesan"></textarea><br /><br />
+        <button type="button" onclick="kirimPesan()">Kirim Pesan</button>
+    </form>
+
+    <script>
+        function kirimPesan() {
+            var nama = document.getElementById("nama").value;
+            var nomer_telepon_pembeli = document.getElementById(
+                "nomer_telepon_pembeli"
+            ).value;
+            var alamat = document.getElementById("alamat").value;
+            var produk = document.getElementById("produk").value;
+            var pesan = document.getElementById("pesan").value;
+
+            // Membentuk URL WhatsApp
+            var url =
+                "https://wa.me/" +
+                "+6289635588388" +
+                "?text=Halo,%20saya%20" +
+                encodeURIComponent(nama) +
+                "%20ingin%20pesan%20produk%20" +
+                encodeURIComponent(produk) +
+                "%20ke%20alamat%20" +
+                encodeURIComponent(alamat) +
+                ".%0A" +
+                "Silakan%20konfirmasi%20pemesanan%20lewat%20nomor%20telepon%20" +
+                encodeURIComponent(nomer_telepon_pembeli) +
+                ".%0A" +
+                "Terima%20kasih.";
+
+            // Mengarahkan browser ke URL WhatsApp
+            window.location.href = url;
+        }
+    </script>
+</body>
+
+</html>
